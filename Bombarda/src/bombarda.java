@@ -1,11 +1,20 @@
 
+
 public class bombarda {
-	private String mensajeCodificado = "";
-	private String mensaje = "";
+	private int mensajeCodificado[];
+	private int mensaje[];
 	
 public bombarda (){
-	mensaje = "el rey es mi padre";
-	mensajeCodificado = "";
+	mensaje = new int[8];
+	mensaje[0] = 7;
+	mensaje[1] = 3;
+	mensaje[2] = 5;
+	mensaje[3] = 8;
+	mensaje[4] = 9;
+	mensaje[5] = 6;
+	mensaje[6] = 0;
+	mensaje[7] = 5;
+	mensajeCodificado = new int[8];
 }
 	
 	
@@ -18,22 +27,22 @@ public bombarda (){
 	}
 	public void codificador (){
 		
-		for (int i = 0 ; i < mensaje.length() -1 ; i+=2){	
-			if (i == 0){
-				mensajeCodificado = mensajeCodificado + mensaje.charAt(0);
-			}else{
-				if(i == mensaje.length()-2){
-					mensajeCodificado = mensajeCodificado + mensaje.charAt(i) + mensaje.charAt(i-1)+ mensaje.charAt(i+1);
-					break;
+		for (int fila = 0 ; fila < mensaje.length ; fila++){	
+			for (int fila2 = 0 ; fila2 < 11 ; fila2++){
+				if(fila2 == mensaje[fila]){
+					mensajeCodificado[fila] = mensaje[fila]+1;
 				}
-				mensajeCodificado = mensajeCodificado + mensaje.charAt(i) + mensaje.charAt(i-1);
 			}
+	
 		}
 			
 
 	}
 	public void muestraMensaje(){
-		System.out.println(mensajeCodificado);
+	for(int i = 0; i < mensajeCodificado.length ; i++){	
+		System.out.println(mensajeCodificado[i]);
+	}
 	}
 
 }
+
